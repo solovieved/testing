@@ -12,6 +12,8 @@ public class LoginPage extends FactoryPage {
     public WebElement password;
     @FindBy(xpath = "//button[@data-action-button-primary='true']")
     public WebElement submit;
+    @FindBy(linkText = "Sign up")
+    public WebElement signUpLink;
 
     public boolean isLoginContainerDisplayed() {
         return loginContainer.isDisplayed();
