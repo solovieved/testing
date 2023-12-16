@@ -3,20 +3,18 @@ package com.soloviev.bdd.steps;
 import com.soloviev.framework.core.drivers.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.testng.CucumberOptions;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
 
 import java.util.concurrent.TimeUnit;
 
 import static com.soloviev.framework.core.lib.WigglePageURLs.START_URL;
 
-@CucumberOptions(features = "src/test/java/com/soloviev/bdd/features/openmainpage.feature")
-public class OpenMainPageStep {
+
+public class OpenHomePageStep {
     private final WebDriver driver;
 
-    public OpenMainPageStep() {
+    public OpenHomePageStep() {
         driver = Driver.getDriver();
     }
 
@@ -33,10 +31,5 @@ public class OpenMainPageStep {
         String expectedTitle = "Get Your Wiggle On | Cycle, Run & Outdoor Shop | Wiggle";
         String actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle, expectedTitle);
-    }
-
-    @AfterSuite
-    public void afterFeature() {
-        Driver.getDriver().quit();
     }
 }
